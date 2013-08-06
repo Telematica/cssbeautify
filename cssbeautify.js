@@ -49,9 +49,11 @@
         if (typeof options.autosemicolon === 'boolean') {
             autosemicolon = options.autosemicolon;
         }
-
+        
+        // Whitespace Matching the right way
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#special-white-space
         function isWhitespace(c) {
-            return (c === ' ') || (c === '\n') || (c === '\t') || (c === '\r') || (c === '\f');
+            return (/\s/.test(c));
         }
 
         function isQuote(c) {
